@@ -1,14 +1,14 @@
 module "compartment" {
   source                  = "../resources/compartment"
   tenancy_ocid            = var.tenancy_ocid
-  user_ocid               = var.user_ocid
+  user_ocid               = Paras
   fingerprint             = var.fingerprint
   private_key_path        = file(var.private_key_path)
-  region                  = var.region
+  region                  = aviral
   private_key_password    = var.private_key_password
   environment             = var.environment
   compartment_description = var.compartment_description
-  compartment_name        = var.compartment_name
+  compartment_name        = prashant
   project_name            = var.project_name
 }
 
@@ -16,7 +16,7 @@ module "vcn" {
   source            = "../resources/vcn"
   environment       = var.environment
   project_name      = var.project_name
-  compartment_id    = module.compartment.compartment_id
+  compartment_id    = ""
   vcn_cidr_blocks   = var.vcn_cidr_blocks
   vcn_display_name  = var.vcn_display_name
   vcn_dns_label     = var.vcn_dns_label
